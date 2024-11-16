@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, iniztial-scale=1.0" />
+    <title>QuoteGenerator</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="textBox">
+        <div class="quote"><p>tap Button</p></div>
+        <div class="author"><h3>To generateQuote</h3></div>
+      </div>
+    </div>
+
+    <button class="btn">Generate</button>
+
+    <script>
+      //Aarray of Quote
+      const quote = [
+        "The only limit to our realization of tomorrow is our doubts of today.",
+        "In the end, we will remember not the words of our enemies, but the silence of our friends.",
+        "Success is not final, failure is not fatal: It is the courage to continue that counts.",
+        "Do not watch the clock. Do what it does. Keep going.",
+      ];
+
+      //   Array of Author
+      const author = [
+        "Franklin D. Roosevelt",
+        "Martin Luther King Jr.",
+        "Winston Churchill",
+        "Sam Levenson",
+      ];
+
+      //Select the elements
+
+      let quoteElement = document.querySelector(".quote");
+      let authorElement = document.querySelector(".author");
+      let button = document.querySelector(".btn");
+
+      button.addEventListener("click", function () {
+        //generate Ramdom index
+        const randomIndex = Math.floor(Math.random() * quote.length);
+
+        //update the quote and author
+        quoteElement.textContent = quote[randomIndex];
+        authorElement.textContent = "--"+ author[randomIndex];
+      });
+    </script>
+  </body>
+</html>
